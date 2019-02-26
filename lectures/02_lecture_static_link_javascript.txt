@@ -1,0 +1,32 @@
+ct = 0;
+
+function A() {
+
+    console.log("A");
+    var a = "fresh a";
+    
+    function B() {
+        console.log("B");
+        var b = "fresh b";
+
+        function C() {
+            console.log("C");
+            var c = "fresh c";
+            console.log(ct);
+            console.log("b=" + b);
+            b = "not fresh b";
+            console.log("b=" + b);
+            console.log("a=" + a);
+
+            if ( ct==0 ) {
+                ct++;
+                a = "not fresh a";
+                B();
+            }
+        }
+
+        C();
+    }
+
+    B();
+}
